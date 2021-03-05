@@ -24,6 +24,10 @@ def get_age(id,apply):
        id: 身份证
        apply: 申请时间 年月日 
     '''
+    if len(apply.split('.')) > 1:
+        apply = apply.split('.')[0]
+    if len(apply.split(' ')) > 1:
+        apply = apply.split(' ')[0]        
     if len(apply) == 10:
         day1 = datetime.strptime(apply, '%Y-%m-%d')
     else:
